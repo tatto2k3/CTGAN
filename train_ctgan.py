@@ -232,27 +232,46 @@ def save_artifacts(model, results, cfg):
         json.dump({"results": results, "config": cfg}, f, indent=4)
 
 
+def log_metrics(title, metrics):
+    logging.info(f"\n===== {title} =====")
+    for k, v in metrics.items():
+        if isinstance(v, float):
+            logging.info(f"{k}: {v:.4f}")
+        else:
+            logging.info(f"{k}: {v}")
+
 # =============================
 # MAIN
 # =============================
 
 def main():
+    logging.basicConfig(level=logging.INFO)
+
     cfg = get_config()
     set_seed(cfg["random_state"])
 
     train, val, test = load_data(cfg)
 
-    # baseline
+    # ===== BASELINE =====
     _, baseline_metrics = run_baseline(train, val, cfg)
+    log_metrics("BASELINE (VAL)", baseline_metrics)
 
-    # ctgan
+    # ===== CTGAN =====
+    logging.info("\n===== TRAIN CTGAN =====")
     ctgan = train_ctgan(train, cfg)
 
+    # ===== EXPERIMENT =====
     best_ratio, best_threshold = run_ctgan_experiment(train, val, ctgan, cfg)
 
-    # final
-    model, test_metrics = final_test(train, test, ctgan, best_ratio, best_threshold, cfg)
+    logging.info("\n===== BEST CONFIG =====")
+    logging.info(f"Best ratio: {best_ratio}")
+    logging.info(f"Best threshold: {best_threshold:.4f}")
 
+    # ===== FINAL TEST =====
+    model, test_metrics = final_test(train, test, ctgan, best_ratio, best_threshold, cfg)
+    log_metrics("FINAL TEST", test_metrics)
+
+    # ===== SAVE =====
     results = {
         "baseline": baseline_metrics,
         "best_ratio": best_ratio,
