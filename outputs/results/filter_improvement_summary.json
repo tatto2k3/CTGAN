@@ -1,0 +1,13 @@
+{
+  "n_before_filter": 1500,
+  "n_after_filter": 421,
+  "pct_kept": 28.07,
+  "MAD_before": 0.1681,
+  "MAD_after": 0.1743,
+  "MAD_improvement": -0.0062,
+  "constraints_applied": [
+    "reoa ↔ ebit: Cùng mẫu số total assets (Δ=0.74)",
+    "ch_fcf ↔ ch_rsst: RSST=f(WC,NCO,FIN) (Δ=0.69)",
+    "dch_wc ↔ dch_inv: Inventory ⊂ Working Capital (Δ=0.59)"
+  ]
+}

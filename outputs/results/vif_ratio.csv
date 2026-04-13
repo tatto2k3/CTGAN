@@ -1,0 +1,15 @@
+feature,VIF,group
+ch_rsst,4.24,RATIO
+ch_fcf,3.63,RATIO
+ebit,2.35,RATIO
+reoa,2.14,RATIO
+ch_roa,1.94,RATIO
+dch_wc,1.8,RATIO
+dch_rec,1.4,RATIO
+dch_inv,1.35,RATIO
+bm,1.08,RATIO
+ch_cs,1.06,RATIO
+soft_assets,1.04,RATIO
+issue,1.04,RATIO
+dpi,1.04,RATIO
+ch_cm,1.01,RATIO

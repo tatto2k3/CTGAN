@@ -1,0 +1,9 @@
+Feature Strategy AUC Results:
+  ratio_only: 0.6266
+  raw_only: 0.7691
+  all_features: 0.7661
+
+RAW VIF > 10: 16/28
+RATIO VIF > 10: 0/14
+
+KHUYẾN NGHỊ: Sử dụng RATIO features (14 biến) cho model chính

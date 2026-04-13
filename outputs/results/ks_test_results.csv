@@ -1,0 +1,15 @@
+feature,ks_stat,p_value,similar
+soft_assets,0.1061,0.0374,False
+reoa,0.1537,0.0005,False
+ch_rsst,0.1679,0.0001,False
+dch_rec,0.1853,0.0,False
+ch_fcf,0.2009,0.0,False
+ch_cs,0.2152,0.0,False
+dch_inv,0.2412,0.0,False
+ch_roa,0.2458,0.0,False
+dch_wc,0.285,0.0,False
+dpi,0.3117,0.0,False
+bm,0.3806,0.0,False
+ch_cm,0.4241,0.0,False
+ebit,0.5604,0.0,False
+issue,0.566,0.0,False
